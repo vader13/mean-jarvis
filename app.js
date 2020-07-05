@@ -8,6 +8,8 @@ const weather = [
   "do you really care?",
   "please, you don't go out!"
 ];
+
+const ironMan = ["hey spoiled boy", "how is pepper?", "hello there Mr. stark"];
 try {
   const SpeechRecognition =
     window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -36,6 +38,9 @@ try {
       speech.text = answer;
     } else if (message.includes("weather")) {
       let answer = weather[Math.floor(Math.random() * weather.length)];
+      speech.text = answer;
+    } else if (message.includes("Iron Man")) {
+      let answer = ironMan[Math.floor(Math.random() * ironMan.length)];
       speech.text = answer;
     } else {
       speech.text = "I didn't catch that dude";
